@@ -25,7 +25,7 @@ class ViewController: BaseScreen {
     }
     
     @IBOutlet weak var tbvMovieList: UITableView!
-    var movieList : MovieResponseModel?
+    var movieList : TvResponseModel?
     var genreNames: Dictionary<Int,String> = [:]
    
     
@@ -36,17 +36,20 @@ class ViewController: BaseScreen {
      
    
         
-        RequestFile.init().getMovieList { (responseData) in
-                        self.movieList = responseData
-                        self.tbvMovieList.reloadData()
-                        self.pagerView.reloadData()
+        RequestFile.init().getMovieList { [weak self](responseData) in
+                        self?.movieList = responseData
+            DispatchQueue.main.async{
+                self?.tbvMovieList.reloadData()
+                self?.pagerView.reloadData()
+            }
+                      
                     }
         
         
-        RequestFile.init().getGenreNames { (responseData) in
+        RequestFile.init().getGenreNames { [weak self] (responseData) in
             if let responseModel = responseData {
                 for genre in responseModel.genres{
-                    self.genreNames[genre.id ?? 0] = genre.name
+                    self?.genreNames[genre.id ?? 0] = genre.name
                 }
             }
         }
@@ -80,8 +83,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MoviesTableViewCell") as! MoviesTableViewCell
-        
-        
+   
         if let movie = movieList?.results[indexPath.row] {
             cell.setViewData(results: movie)
         }

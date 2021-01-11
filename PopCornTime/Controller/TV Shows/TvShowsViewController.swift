@@ -9,7 +9,7 @@
 import UIKit
 import FSPagerView
 
-class TvShowsViewController: BaseScreen {
+class TvShowsViewController: UIViewController {
 
     @IBOutlet weak var colvTvList: UICollectionView!
     
@@ -29,17 +29,18 @@ class TvShowsViewController: BaseScreen {
         super.viewDidLoad()
 
         
-        RequestFile.init().getTvList { (responseData) in
-                              self.TvList = responseData
-                              self.colvTvList.reloadData()
-                              self.pagerView.reloadData()
-            self.pagerView.transformer = FSPagerViewTransformer(type: .linear)
+        RequestFile.init().getTvList { [weak self]( responseData) in
+            self?.TvList = responseData
+            DispatchQueue.main.async{
+                self?.colvTvList.reloadData()
+                self?.pagerView.reloadData()
+            }
+                
+            self?.pagerView.transformer = FSPagerViewTransformer(type: .linear)
                           }
         // Do any additional setup after loading the view.
     }
     
-    
-   // pagerView.transformer = FSPagerViewTransformer(type: .linear)//
     
 }
 
@@ -56,14 +57,9 @@ extension TvShowsViewController: UICollectionViewDelegate,UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TvShowsCollectionViewCell", for: indexPath) as! TvShowsCollectionViewCell
-       
-        
-        cell.lblTvShowsName.text = self.TvList?.results[indexPath.row].name
-        cell.lblVoteAverage.text = "\(self.TvList?.results[indexPath.row].voteAverage ?? 0.0)"
-        let filmImageUrlStr = self.TvList?.results[indexPath.row].backdropPath ?? ""
-        let url = URL(string: "https://image.tmdb.org/t/p/original" + filmImageUrlStr)
-        cell.imgTvShowsImage?.kf.setImage(with: url)
-        
+        if let tvShows = TvList?.results[indexPath.row] {
+            cell.setViewData(Results: tvShows)
+        }
         
         return cell
     }
@@ -87,7 +83,7 @@ extension TvShowsViewController: FSPagerViewDelegate,FSPagerViewDataSource {
         
     public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        let filmImageUrlStr = self.TvList?.results[index].backdropPath ?? ""
+        let filmImageUrlStr = self.TvList?.results[index].posterPath ?? ""
         let url = URL(string: "https://image.tmdb.org/t/p/original" + filmImageUrlStr)
         cell.imageView?.kf.setImage(with: url)
         lblNamePager.text = self.TvList?.results[index].name ?? ""
@@ -98,8 +94,10 @@ extension TvShowsViewController: FSPagerViewDelegate,FSPagerViewDataSource {
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
          BaseData.sharedInstance.selectedId = self.TvList?.results[index].id
-             //  performSegue(withIdentifier: "showMovieDetails", sender: nil)
+         performSegue(withIdentifier: "showTvDetails", sender: nil)
     }
+    
+   
 }
 
 

@@ -7,13 +7,12 @@
 //
 
 import Foundation
-struct TvResponseModel: Codable {
+struct TvResponseModel: Codable  {
   
-    
         let page : Int?
         let totalResults : Int?
         let totalPages: Int?
-        let results: [Resultss]
+        let results: [Result]
 
         enum CodingKeys: String, CodingKey {
             case page
@@ -24,7 +23,7 @@ struct TvResponseModel: Codable {
     }
 
     // MARK: - Result
-    struct Resultss: Codable {
+    struct Result: Codable {
         let popularity: Double?
         let voteCount: Int?
         let video: Bool?
@@ -51,7 +50,7 @@ struct TvResponseModel: Codable {
             case originalLanguage = "original_language"
             case originalTitle = "original_title"
             case genreIDS = "genre_ids"
-            case title
+            case title 
             case voteAverage = "vote_average"
             case overview
             case releaseDate = "release_date"

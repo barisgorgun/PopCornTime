@@ -26,24 +26,24 @@ class TvShowsDetailsViewController: BaseScreen {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        RequestFile.init().getTvDetails(id: BaseData.sharedInstance.selectedId ?? 0) { (responseModel) in
-            self.response = responseModel
-            self.lblTvShowName.text = self.response?.name
-            self.lblTvShowRunTime.text = "\(self.response?.episodeRunTime ?? [])min"
-            self.lblVoteAvarage.text = "\(self.response?.voteAverage ?? 0.0)"
-            self.txvTvShowOverview.text = self.response?.overview
-            let filmImageUrlStr = self.response?.posterPath ?? ""
+        RequestFile.init().getTvDetails(id: BaseData.sharedInstance.selectedId ?? 0) { [weak self] (responseModel) in
+            self?.response = responseModel
+            self?.lblTvShowName.text = self?.response?.name
+            self?.lblTvShowRunTime.text = "\(self?.response?.episodeRunTime ?? [])min"
+            self?.lblVoteAvarage.text = "\(self?.response?.voteAverage ?? 0.0)"
+            self?.txvTvShowOverview.text = self?.response?.overview
+            let filmImageUrlStr = self?.response?.posterPath ?? ""
             let url = URL(string: "https://image.tmdb.org/t/p/original" + filmImageUrlStr)
-            self.imgTvShow?.kf.setImage(with: url)
-            var airDate = String(self.response?.firstAirDate ?? "").prefix(4)
-            var lastAirDate = String(self.response?.lastAirDate ?? "").prefix(4)
-            self.lblTvShowAirDate.text = "TV Series (\(airDate)" + " - " + "\(lastAirDate))"
+            self?.imgTvShow?.kf.setImage(with: url)
+            var airDate = String(self?.response?.firstAirDate ?? "").prefix(4)
+            var lastAirDate = String(self?.response?.lastAirDate ?? "").prefix(4)
+            self?.lblTvShowAirDate.text = "TV Series (\(airDate)" + " - " + "\(lastAirDate))"
             
         }
         
-       RequestFile.init().getCastList(id: BaseData.sharedInstance.selectedId ?? 0) { (responseModel) in
-        self.castResponse = responseModel
-        self.clvCast.reloadData()
+       RequestFile.init().getCastList(id: BaseData.sharedInstance.selectedId ?? 0) { [weak self] (responseModel) in
+        self?.castResponse = responseModel
+        self?.clvCast.reloadData()
        // print(self.castResponse?.cast?[2].name)
      
         }

@@ -29,6 +29,10 @@
 		FA5378DB256A658000904DFA /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5378DA256A658000904DFA /* MoviesTableViewCell.swift */; };
 		FA5378DE256A75CA00904DFA /* RequestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5378DD256A75CA00904DFA /* RequestFile.swift */; };
 		FA5378E1256A760400904DFA /* MovieResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5378E0256A760400904DFA /* MovieResponseModel.swift */; };
+		FA8B496925A9947300648D47 /* TvShows.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8B496825A9947300648D47 /* TvShows.storyboard */; };
+		FA8B497025A9BF1100648D47 /* FavoritesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8B496F25A9BF1100648D47 /* FavoritesList.storyboard */; };
+		FA8B497325A9BF2F00648D47 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8B497225A9BF2F00648D47 /* FavoritesViewController.swift */; };
+		FA8B497725A9C2EC00648D47 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8B497625A9C2EC00648D47 /* FavoritesCell.swift */; };
 		FAA217D82572B4BA00DF9467 /* PopCornTime.json in Resources */ = {isa = PBXBuildFile; fileRef = FAA217D72572B4BA00DF9467 /* PopCornTime.json */; };
 		FAA217DA2572B50A00DF9467 /* LottieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA217D92572B50A00DF9467 /* LottieViewController.swift */; };
 		FAA217DD257367BE00DF9467 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA217DC257367BE00DF9467 /* MovieDetailsViewController.swift */; };
@@ -63,6 +67,10 @@
 		FA5378DA256A658000904DFA /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
 		FA5378DD256A75CA00904DFA /* RequestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFile.swift; sourceTree = "<group>"; };
 		FA5378E0256A760400904DFA /* MovieResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponseModel.swift; sourceTree = "<group>"; };
+		FA8B496825A9947300648D47 /* TvShows.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TvShows.storyboard; sourceTree = "<group>"; };
+		FA8B496F25A9BF1100648D47 /* FavoritesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoritesList.storyboard; sourceTree = "<group>"; };
+		FA8B497225A9BF2F00648D47 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		FA8B497625A9C2EC00648D47 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		FAA217D72572B4BA00DF9467 /* PopCornTime.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PopCornTime.json; sourceTree = "<group>"; };
 		FAA217D92572B50A00DF9467 /* LottieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieViewController.swift; sourceTree = "<group>"; };
 		FAA217DC257367BE00DF9467 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
@@ -142,7 +150,6 @@
 				FAD533A225794004004A9C7C /* Base */,
 				FA5378DF256A75F100904DFA /* Model */,
 				FAD533A625794362004A9C7C /* Controller */,
-				FAD533A72579438F004A9C7C /* Cell */,
 				FA5378DC256A759D00904DFA /* Network */,
 				FA5378CF256A63F400904DFA /* CustomObject */,
 				FA5378BB256A62BD00904DFA /* AppDelegate.swift */,
@@ -219,6 +226,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FA8B496D25A9BEE400648D47 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				FA8B497525A9C2D000648D47 /* Cell */,
+				FA8B496F25A9BF1100648D47 /* FavoritesList.storyboard */,
+				FA8B497225A9BF2F00648D47 /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		FA8B497525A9C2D000648D47 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA8B497625A9C2EC00648D47 /* FavoritesCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FA8E9A39257576CB002587E8 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +259,7 @@
 				FA4851F12576A05F0062C126 /* Cell */,
 				FA4851EF25769FE70062C126 /* TvShowsViewController.swift */,
 				FA0A703B257979ED00179240 /* TvShowsDetailsViewController.swift */,
+				FA8B496825A9947300648D47 /* TvShows.storyboard */,
 			);
 			path = "TV Shows";
 			sourceTree = "<group>";
@@ -250,17 +276,11 @@
 		FAD533A625794362004A9C7C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA8B496D25A9BEE400648D47 /* Favorites */,
 				FA5378D8256A650A00904DFA /* Movies */,
 				FA8E9A3A2575784B002587E8 /* TV Shows */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		FAD533A72579438F004A9C7C /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,10 +343,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8B497025A9BF1100648D47 /* FavoritesList.storyboard in Resources */,
 				FAA217D82572B4BA00DF9467 /* PopCornTime.json in Resources */,
 				FA5378C8256A62BF00904DFA /* LaunchScreen.storyboard in Resources */,
 				FA5378C5256A62BF00904DFA /* Assets.xcassets in Resources */,
 				FA5378C3256A62BD00904DFA /* Main.storyboard in Resources */,
+				FA8B496925A9947300648D47 /* TvShows.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,9 +418,11 @@
 				FA065A59257C270400D5A17F /* CastCell.swift in Sources */,
 				FA5378DE256A75CA00904DFA /* RequestFile.swift in Sources */,
 				FA4851F32576A0760062C126 /* TvShowsCollectionViewCell.swift in Sources */,
+				FA8B497725A9C2EC00648D47 /* FavoritesCell.swift in Sources */,
 				FA5378DB256A658000904DFA /* MoviesTableViewCell.swift in Sources */,
 				FAD533A42579401E004A9C7C /* BaseData.swift in Sources */,
 				FA5378BE256A62BD00904DFA /* SceneDelegate.swift in Sources */,
+				FA8B497325A9BF2F00648D47 /* FavoritesViewController.swift in Sources */,
 				FA0A703C257979ED00179240 /* TvShowsDetailsViewController.swift in Sources */,
 				FA065A53257B95B500D5A17F /* BaseScreen.swift in Sources */,
 			);

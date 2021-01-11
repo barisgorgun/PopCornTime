@@ -30,18 +30,18 @@ class MovieDetailsViewController: BaseScreen {
         
    
         
-        RequestFile.init().getMovieDetails(id: BaseData.sharedInstance.selectedId ?? 0) { (responseModel) in
+        RequestFile.init().getMovieDetails(id: BaseData.sharedInstance.selectedId ?? 0) { [weak self] (responseModel) in
        
-        self.response = responseModel
-        self.lblMovieName.text = self.response?.title
-        var filmImage = self.response?.posterPath ?? ""
-        let url = URL(string: "https://image.tmdb.org/t/p/original" + filmImage)
-        self.imgMovie?.kf.setImage(with: url)
-        self.lblRunTime.text = "\(self.response?.runtime ?? 0)min"
-        self.lblDate.text = self.response?.releaseDate
-        self.txvOverview.text = self.response?.overview
-        var voteAverage = self.response?.voteAverage ?? 0.0
-        self.lblVoteAverage.text = "\(voteAverage) "
+            self?.response = responseModel
+            self?.lblMovieName.text = self?.response?.title
+            var filmImage = self?.response?.posterPath ?? ""
+            let url = URL(string: "https://image.tmdb.org/t/p/original" + filmImage)
+            self?.imgMovie?.kf.setImage(with: url)
+            self?.lblRunTime.text = "\(self?.response?.runtime ?? 0)min"
+            self?.lblDate.text = self?.response?.releaseDate
+            self?.txvOverview.text = self?.response?.overview
+            var voteAverage = self?.response?.voteAverage ?? 0.0
+            self?.lblVoteAverage.text = "\(voteAverage) "
        
           
        }

@@ -16,16 +16,14 @@ class RequestFile {
     
     
 
-    //https://api.themoviedb.org/3/movie/top_rated?api_key=ade094db1689805d5b0787ea9bd740d7
-  func getMovieList( successHandler: @escaping( MovieResponseModel?)->()){
-         AF.request(baseURL + "movie/top_rated?api_key=" + apiKey + "&language=en-US&page=1").responseDecodable { (response:AFDataResponse<MovieResponseModel>) in
+  func getMovieList( successHandler: @escaping( TvResponseModel?)->()){
+         AF.request(baseURL + "movie/top_rated?api_key=" + apiKey + "&language=en-US&page=1").responseDecodable { (response:AFDataResponse<TvResponseModel>) in
              switch(response.result){
              case .success(let responseData):
                  successHandler(responseData)
-               // print(responseData)
                  break
              case .failure(let error):
-                // print(error.localizedDescription)
+                 print(error.localizedDescription)
                  break
              }
              
@@ -46,8 +44,7 @@ class RequestFile {
        }
    }
     func getTvList( successHandler: @escaping( TvResponseModel?)->()){
-       // let url = baseURL + "tv/popular?api_key=" + apiKey + "&language=en-US"
-        
+    
             AF.request(baseURL + "tv/popular?api_key=" + apiKey + "&language=en-US").responseDecodable { (response:AFDataResponse<TvResponseModel>) in
                 switch(response.result){
                 case .success(let responseData):
@@ -62,8 +59,6 @@ class RequestFile {
             }
         }
     
-    
-  
      func getTvDetails(id:Int, successHandler: @escaping( TvDetailsResponseModel?)->()){
         AF.request(baseURL + "tv/" + String(id) + "?api_key=" + apiKey).responseDecodable { (response:AFDataResponse<TvDetailsResponseModel>) in
             switch(response.result){
@@ -79,7 +74,6 @@ class RequestFile {
         }
     }
     
-    //https://api.themoviedb.org/3/tv/71712/credits?api_key=ade094db1689805d5b0787ea9bd740d7
     func getCastList(id:Int, successHandler: @escaping( CastResponseModel?)->()){
            AF.request( baseURL + "tv/" + String(id) + "/credits?api_key=" + apiKey).responseDecodable { (response:AFDataResponse<CastResponseModel>) in
                switch(response.result){
@@ -94,8 +88,6 @@ class RequestFile {
                
            }
        }
-    
-   
     
     func getGenreNames(successHandler: @escaping( GenreResponseModel?)->()){
         
@@ -112,6 +104,9 @@ class RequestFile {
            
        }
    }
+    
+  
+    
 }
 
 

@@ -8,11 +8,9 @@
 
 
 class MovieResponseModel: Codable {
+   
     
-    
-    
-  
-            let results: [Result]
+            let results: [Results]
             let totalResults, page, totalPages: Int
 
             enum CodingKeys: String, CodingKey {
@@ -24,7 +22,7 @@ class MovieResponseModel: Codable {
         }
 
         // MARK: - Result
-        struct Result: Codable {
+        struct Results: Codable {
             let originalLanguage, originalTitle, posterPath, title: String
             let video: Bool
             let voteAverage, popularity: Double
