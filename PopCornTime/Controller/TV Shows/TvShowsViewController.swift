@@ -9,7 +9,8 @@
 import UIKit
 import FSPagerView
 
-class TvShowsViewController: UIViewController {
+
+class TvShowsViewController: BaseScreen {
 
     @IBOutlet weak var colvTvList: UICollectionView!
     

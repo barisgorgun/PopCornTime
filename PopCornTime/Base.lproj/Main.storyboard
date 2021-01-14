@@ -45,7 +45,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CM7-2r-aZg">
-                                <rect key="frame" x="0.0" y="44" width="414" height="403"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="582"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SqX-8k-wOM" customClass="FSPagerView" customModule="FSPagerView">
                                         <rect key="frame" x="80" y="53" width="254" height="350"/>
@@ -159,7 +159,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kbr-1g-sf6">
-                                <rect key="frame" x="0.0" y="448" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="627" width="414" height="269"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoviesTableViewCell" rowHeight="160" id="Ve5-iD-1iD" customClass="MoviesTableViewCell" customModule="PopCornTime" customModuleProvider="target">
@@ -173,22 +173,22 @@
                                                     <rect key="frame" x="15" y="5" width="384" height="150"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0e-3H-B3t">
-                                                            <rect key="frame" x="358" y="6.5" width="21" height="19.5"/>
+                                                            <rect key="frame" x="354" y="5" width="25" height="25"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="21" id="jSs-Vl-XXx"/>
-                                                                <constraint firstAttribute="height" constant="22" id="kqB-qV-2KE"/>
+                                                                <constraint firstAttribute="width" constant="25" id="jSs-Vl-XXx"/>
+                                                                <constraint firstAttribute="height" constant="25" id="kqB-qV-2KE"/>
                                                             </constraints>
                                                             <color key="tintColor" systemColor="systemRedColor"/>
-                                                            <state key="normal" image="heart" catalog="system" backgroundImage="heart"/>
+                                                            <state key="normal" image="heart" catalog="system"/>
                                                             <connections>
                                                                 <action selector="addFavorites:" destination="Ve5-iD-1iD" eventType="touchUpInside" id="d8Q-Cq-Uz8"/>
                                                                 <action selector="btnFavorite:" destination="1wR-Yn-EO1" eventType="touchUpInside" id="kI0-rE-JA5"/>
                                                             </connections>
                                                         </button>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f4Z-0o-8RW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="150"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyimage" translatesAutoresizingMaskIntoConstraints="NO" id="f4Z-0o-8RW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="140" id="wXm-CU-gBv"/>
+                                                                <constraint firstAttribute="width" constant="120" id="wXm-CU-gBv"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -197,9 +197,9 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="P9q-rw-a2q">
-                                                            <rect key="frame" x="150" y="12" width="214" height="126"/>
+                                                            <rect key="frame" x="130" y="12" width="234" height="126"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joker" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOX-y2-BNr">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joker" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOX-y2-BNr">
                                                                     <rect key="frame" x="0.0" y="0.0" width="39" height="15"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                     <nil key="textColor"/>
@@ -333,7 +333,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F29-iP-YX4">
-                                <rect key="frame" x="0.0" y="447" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="626" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="WSJ-0d-0vM"/>
@@ -353,7 +353,7 @@
                             <constraint firstItem="rH9-SV-W4Z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9C8-xr-4kM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rH9-SV-W4Z" secondAttribute="trailing" id="AGE-Cj-Vk2"/>
                             <constraint firstAttribute="trailing" secondItem="F29-iP-YX4" secondAttribute="trailing" id="DrS-YC-Q0k"/>
-                            <constraint firstItem="Kbr-1g-sf6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="KbI-4C-8NL"/>
+                            <constraint firstItem="Kbr-1g-sf6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="KbI-4C-8NL"/>
                             <constraint firstItem="Kbr-1g-sf6" firstAttribute="top" secondItem="F29-iP-YX4" secondAttribute="bottom" id="Kyp-IZ-v08"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CM7-2r-aZg" secondAttribute="trailing" id="Nir-0d-Xrk"/>
                             <constraint firstItem="F29-iP-YX4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XPB-Ke-08t"/>
@@ -421,7 +421,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="57A-io-mBz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyimage" translatesAutoresizingMaskIntoConstraints="NO" id="57A-io-mBz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -624,6 +624,7 @@
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="dummyimage" width="358" height="512"/>
         <image name="film" catalog="system" width="128" height="93"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

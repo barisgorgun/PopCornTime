@@ -76,7 +76,7 @@ class ViewController: BaseScreen {
     
 }
 
-extension ViewController: UITableViewDelegate,UITableViewDataSource {
+extension ViewController: UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.movieList?.results.count ?? 2
     }
@@ -89,7 +89,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
         }
         let genresId = movieList?.results[indexPath.row].genreIDS
         cell.lblGenresName.text = getGenres(genreIds: genresId ?? [0])
-    
+        
         return cell
     }
     

@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (5.2.1)
+  - FSPagerView (0.8.3)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
+  - lottie-ios (3.1.9)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - FSPagerView
+  - Kingfisher
+  - lottie-ios
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - FSPagerView
+    - Kingfisher
+    - lottie-ios
+
+SPEC CHECKSUMS:
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
+
+PODFILE CHECKSUM: ba06cdca315473390db781eb76a1eed38de7bfe9
+
+COCOAPODS: 1.9.3

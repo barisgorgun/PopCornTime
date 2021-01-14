@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class TvShowsDetailsViewController: BaseScreen {
     
     @IBOutlet weak var clvCast: UICollectionView!
@@ -32,11 +33,11 @@ class TvShowsDetailsViewController: BaseScreen {
             self?.lblTvShowRunTime.text = "\(self?.response?.episodeRunTime ?? [])min"
             self?.lblVoteAvarage.text = "\(self?.response?.voteAverage ?? 0.0)"
             self?.txvTvShowOverview.text = self?.response?.overview
-            let filmImageUrlStr = self?.response?.posterPath ?? ""
+            let filmImageUrlStr = self?.response?.posterPath ?? "dummyimage"
             let url = URL(string: "https://image.tmdb.org/t/p/original" + filmImageUrlStr)
             self?.imgTvShow?.kf.setImage(with: url)
-            var airDate = String(self?.response?.firstAirDate ?? "").prefix(4)
-            var lastAirDate = String(self?.response?.lastAirDate ?? "").prefix(4)
+            let airDate = String(self?.response?.firstAirDate ?? "").prefix(4)
+            let lastAirDate = String(self?.response?.lastAirDate ?? "").prefix(4)
             self?.lblTvShowAirDate.text = "TV Series (\(airDate)" + " - " + "\(lastAirDate))"
             
         }
@@ -44,7 +45,7 @@ class TvShowsDetailsViewController: BaseScreen {
        RequestFile.init().getCastList(id: BaseData.sharedInstance.selectedId ?? 0) { [weak self] (responseModel) in
         self?.castResponse = responseModel
         self?.clvCast.reloadData()
-       // print(self.castResponse?.cast?[2].name)
+       
      
         }
        
@@ -54,7 +55,7 @@ class TvShowsDetailsViewController: BaseScreen {
 
 extension TvShowsDetailsViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.castResponse?.cast?.count ?? 2
+        return self.castResponse?.cast?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

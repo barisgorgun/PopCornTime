@@ -39,8 +39,12 @@ class MoviesTableViewCell: UITableViewCell {
         let filmImageUrlStr = results.posterPath ?? ""
         let url = URL(string: "https://image.tmdb.org/t/p/original" + filmImageUrlStr)
         imgMovie?.kf.setImage(with: url)
-        
-      
+        if (!BaseData.sharedInstance.isMovieFavorite(movieId: movie!.id!)) {
+           self.btnFavorite.setImage(UIImage.init(systemName: "heart"), for: .normal)
+        }else {
+               self.btnFavorite.setImage(UIImage.init(systemName: "heart.fill"), for: .normal)
+    
+            }
     }
  
     @IBAction func addFavorites(_ sender: Any) {

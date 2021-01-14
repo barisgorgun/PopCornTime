@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Top Rated-->
+        <!--Tv Shows View Controller-->
         <scene sceneID="4jt-na-RzE">
             <objects>
                 <viewController id="MZD-6L-H1J" customClass="TvShowsViewController" customModule="PopCornTime" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,16 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OT-3t-e6T">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0a-MK-ahy">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="3800"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vag-o4-FQn">
-                                                <rect key="frame" x="0.0" y="-89" width="414" height="319"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vag-o4-FQn">
+                                                <rect key="frame" x="0.0" y="-92" width="414" height="319"/>
                                                 <color key="backgroundColor" systemColor="linkColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="230" id="vnU-Pr-Xfr"/>
+                                                    <constraint firstAttribute="height" constant="319" id="vnU-Pr-Xfr"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwh-K8-kQu">
@@ -188,7 +188,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hx6-fP-j1S">
                                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="386.5"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mai-c2-X9s">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyimage" translatesAutoresizingMaskIntoConstraints="NO" id="Mai-c2-X9s">
                                                                             <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="250" id="I4I-Zh-k6w"/>
@@ -239,19 +239,19 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnx-vA-pGd">
-                                                                    <rect key="frame" x="174" y="6.5" width="21" height="19.5"/>
+                                                                    <rect key="frame" x="170" y="5" width="25" height="25"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="22" id="W0m-fm-OAq"/>
-                                                                        <constraint firstAttribute="width" constant="21" id="jkY-Iv-Mla"/>
+                                                                        <constraint firstAttribute="height" constant="25" id="W0m-fm-OAq"/>
+                                                                        <constraint firstAttribute="width" constant="25" id="jkY-Iv-Mla"/>
                                                                     </constraints>
                                                                     <color key="tintColor" systemColor="systemRedColor"/>
-                                                                    <state key="normal" image="heart" catalog="system" backgroundImage="heart"/>
+                                                                    <state key="normal" image="heart" catalog="system"/>
                                                                     <connections>
                                                                         <action selector="addFavorite:" destination="Hd1-y0-0vt" eventType="touchUpInside" id="JYD-qJ-wAd"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="hx6-fP-j1S" firstAttribute="leading" secondItem="2dZ-qa-yEl" secondAttribute="leading" id="7HH-uD-gkU"/>
                                                                 <constraint firstItem="gnx-vA-pGd" firstAttribute="top" secondItem="2dZ-qa-yEl" secondAttribute="top" constant="5" id="Ib2-aZ-hvo"/>
@@ -288,7 +288,7 @@
                                             <constraint firstItem="Vag-o4-FQn" firstAttribute="leading" secondItem="M0a-MK-ahy" secondAttribute="leading" id="Cvc-cq-ngD"/>
                                             <constraint firstAttribute="trailing" secondItem="opY-kN-Jte" secondAttribute="trailing" id="E4X-cK-ddE"/>
                                             <constraint firstAttribute="trailing" secondItem="WRa-kl-xxe" secondAttribute="trailing" id="ENB-4J-SLK"/>
-                                            <constraint firstItem="Vag-o4-FQn" firstAttribute="top" secondItem="M0a-MK-ahy" secondAttribute="top" id="GMq-Xh-qdG"/>
+                                            <constraint firstItem="Vag-o4-FQn" firstAttribute="top" secondItem="M0a-MK-ahy" secondAttribute="top" constant="-92" id="GMq-Xh-qdG"/>
                                             <constraint firstItem="WRa-kl-xxe" firstAttribute="leading" secondItem="M0a-MK-ahy" secondAttribute="leading" id="KRo-zx-7dw"/>
                                             <constraint firstItem="opY-kN-Jte" firstAttribute="top" secondItem="kwh-K8-kQu" secondAttribute="bottom" id="Vg9-08-CwW"/>
                                             <constraint firstAttribute="trailing" secondItem="kwh-K8-kQu" secondAttribute="trailing" id="fIU-Bu-ao9"/>
@@ -302,6 +302,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="M0a-MK-ahy" firstAttribute="top" secondItem="7y8-I9-BMz" secondAttribute="top" id="9KD-em-kVl"/>
                                     <constraint firstItem="M0a-MK-ahy" firstAttribute="trailing" secondItem="7y8-I9-BMz" secondAttribute="trailing" id="ZKM-ic-x64"/>
@@ -322,7 +323,8 @@
                             <constraint firstItem="1OT-3t-e6T" firstAttribute="bottom" secondItem="fcJ-cU-Umq" secondAttribute="bottom" id="byP-Pc-BVS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Top Rated" id="EM6-Vd-lIi"/>
+                    <navigationItem key="navigationItem" id="EM6-Vd-lIi"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="colvTvList" destination="opY-kN-Jte" id="jpp-aa-eFU"/>
                         <outlet property="lblGenrePager" destination="nV1-zB-K46" id="PqR-Bk-94U"/>
@@ -348,7 +350,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lzc-H1-Ssy">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyimage" translatesAutoresizingMaskIntoConstraints="NO" id="Lzc-H1-Ssy">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="350" id="P9b-bo-MRy"/>
@@ -480,7 +482,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4B2-24-cMs">
-                                        <rect key="frame" x="0.0" y="637.5" width="414" height="175.5"/>
+                                        <rect key="frame" x="0.0" y="637.5" width="414" height="224.5"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AQe-rS-cPk">
                                             <size key="itemSize" width="100" height="135"/>
@@ -490,7 +492,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CastCell" id="g0t-gj-M61" customClass="CastCell" customModule="PopCornTime" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="20.5" width="100" height="135"/>
+                                                <rect key="frame" x="5" y="45" width="100" height="135"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="scP-Ob-Tz4">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="135"/>
@@ -603,11 +605,10 @@
                 <navigationController storyboardIdentifier="TvShows" automaticallyAdjustsScrollViewInsets="NO" id="yD2-Ga-P11" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tv" catalog="system" id="CxN-iX-Rur"/>
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a8g-7R-ndE">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="linkColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nXR-xC-yNr">
@@ -625,6 +626,7 @@
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="dummyimage" width="358" height="512"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="tv" catalog="system" width="128" height="97"/>

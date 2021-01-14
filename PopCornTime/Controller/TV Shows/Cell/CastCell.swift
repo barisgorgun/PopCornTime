@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class CastCell: UICollectionViewCell {
     
     @IBOutlet weak var imgCast: UIImageView!
